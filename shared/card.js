@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 export default function Card(props) {
   return (
     <View style={styles.card}>
-      <Text style={styles.cardContent}>
+      <View style={styles.cardContent}>
         {props.children}
-      </Text>
+      </View>
     </View>
   );
 }

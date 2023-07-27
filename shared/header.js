@@ -1,9 +1,18 @@
 import { MaterialIcons } from "@expo/vector-icons";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  Image,
+  ImageBackground,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 export default function Header({ title, navigation }) {
   return (
-    <View style={styles.header}>
+    <ImageBackground
+      source={require("../assets/game_bg.png")}
+      style={styles.header}
+    >
       <MaterialIcons
         name="menu"
         size={28}
@@ -11,9 +20,13 @@ export default function Header({ title, navigation }) {
         onPress={() => navigation.openDrawer()}
       />
       <View style={styles.headerTitle}>
+        <Image
+          source={require("../assets/heart_logo.png")}
+          style={styles.headerImage}
+        />
         <Text style={styles.headerText}>{title}</Text>
       </View>
-    </View>
+    </ImageBackground>
   );
 }
 
@@ -31,6 +44,7 @@ const styles = StyleSheet.create({
   },
   headerTitle: {
     flexDirection: "row",
+    alignItems: "flex-end",
   },
   headerText: {
     fontWeight: "bold",
@@ -39,8 +53,8 @@ const styles = StyleSheet.create({
     letterSpacing: 1,
   },
   headerImage: {
-    width: 26,
-    height: 26,
+    width: 24,
+    height: 24,
     marginHorizontal: 10,
   },
 });
