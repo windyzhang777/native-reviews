@@ -63,6 +63,7 @@ export default function ReviewForm({ addReview }) {
             </Text>
             <TextInput
               multiline
+              minHeight={100}
               onBlur={handleBlur("body")}
               onChangeText={handleChange("body")}
               placeholder="body"
