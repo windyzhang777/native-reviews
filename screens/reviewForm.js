@@ -1,11 +1,7 @@
 import { Formik } from "formik";
-import {
-  Button,
-  Text,
-  TextInput,
-  View,
-} from "react-native";
+import { Text, TextInput, View } from "react-native";
 import * as yup from "yup";
+import StyledButton from "../shared/button";
 import { globalStyles } from "../styles/global";
 
 const INITIAL_VALLUES = {
@@ -87,9 +83,8 @@ export default function ReviewForm({ addReview }) {
             <Text style={globalStyles.errorText}>
               {touched.rating && errors.rating}
             </Text>
-            <Button
-              color="maroon"
-              onPress={handleSubmit}
+            <StyledButton
+              handleSubmit={handleSubmit}
               title="submit"
             />
           </View>
